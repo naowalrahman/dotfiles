@@ -20,8 +20,8 @@ Whenever I make any major change to my dotfiles, I'll be reflecting those change
 - text editor: neovim
 
 ### Screenshots:
-!(setup-screenshots/sc1.png)
-!(setup-screenshots/sc2.png)
-!(setup-screenshots/sc3.png)
-!(setup-screenshots/sc4.png)
-!(setup-screenshots/sc5.png)
+![sc1](setup-screenshots/sc1.png)
+![sc2](setup-screenshots/sc2.png)
+![sc3](setup-screenshots/sc3.png)
+![sc4](setup-screenshots/sc4.png)
+![sc5](setup-screenshots/sc5.png)
