@@ -10,7 +10,7 @@ Whenever I make any major change to my dotfiles, I'll be reflecting those change
 - notification manager: dunst 
 - screenshot tool: flameshot
 - camera app: guvcview
-- wm: i3
+- wm: i3-gaps
 - terminal emulator: kitty
 - media player: mpv
 - compositor: picom 
