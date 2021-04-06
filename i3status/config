@@ -12,6 +12,7 @@ general {
 }
 
 order += "wireless _first_"
+order += "read_file Uptime"
 order += "disk /"
 order += "cpu_usage"
 order += "memory"
@@ -19,7 +20,7 @@ order += "volume master"
 order += "tztime newyork"
 
 wireless _first_ {
-        format_up = "W: (%quality at %essid, %bitrate ) %ip   "
+        format_up = "   W: (%quality at %essid, %bitrate ) %ip   "
         format_down = "W: down"
 }
 
@@ -47,8 +48,8 @@ memory {
 }
 
 tztime newyork {
-        format = "   %time   "
-        format_time = "%I:%M %Z"
+
+        format = "   %m/%d/%Y %I:%M %Z   "
         timezone = "US/Eastern"
        
 }
@@ -59,6 +60,9 @@ volume master {
         device = "default"
         mixer = "Master"
         mixer_idx = 0
-           }
+}
 
-
+read_file Uptime { 
+	format = "   %title: %content   "
+	path = "/tmp/uptime"
+}
