@@ -17,7 +17,7 @@ Whenever I make any major change to my dotfiles, I'll be reflecting those change
 - file manager: ranger
 - pdf viewer: zathura 
 - gtk theme: materia dark 
-- mail client: neomutt with [mutt-wizard](https://https://github.com/LukeSmithxyz/mutt-wizard)
+- mail client: neomutt with [mutt-wizard](https://github.com/LukeSmithxyz/mutt-wizard)
 - text editor: neovim
 
 (Note that to use my neovim config, you need the [neovim-nightly-bin](https://aur.archlinux.org/packages/neovim-nightly-bin) version of neovim from the AUR.)
