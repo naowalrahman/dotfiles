@@ -25,6 +25,9 @@ Whenever I make any major change to my dotfiles, I'll be reflecting those change
 I've started experimenting with dwm on a virtual machine, and once I fully switch to it I will upload my rice of that, but for now, this is my main configuration. 
 
 ### Screenshots:
+
+Note: these screenshots aren't up to date. There are a few things that have changed since I've uploaded them, specifically the font (now Fira Code) and a fix to a mess-up in my terminal color scheme. 
+
 ![sc1](setup-screenshots/sc1.png)
 ![sc2](setup-screenshots/sc2.png)
 ![sc3](setup-screenshots/sc3.png)
