@@ -1,0 +1,338 @@
+[1;36m 10ff-git[1;37m Typing tests in CLI
+[1;36m 3mux[1;37m Terminal multiplexer inspired by i3
+[1;36m alsa-utils[1;37m Advanced Linux Sound Architecture - Utilities
+[1;36m asciiquarium[1;37m An aquarium/sea animation in ASCII art
+[1;36m asoundconf[1;37m utility to read and change the user's ALSA library configuration
+[1;36m autoconf[1;37m A GNU tool for automatically configuring source code
+[1;36m automake[1;37m A GNU tool for automatically creating Makefiles
+[1;36m base[1;37m Minimal package set to define a basic Arch Linux installation
+[1;36m binutils[1;37m A set of programs to assemble and manipulate binary and object files
+[1;36m bison[1;37m The GNU general-purpose parser generator
+[1;36m blueman[1;37m GTK+ Bluetooth Manager
+[1;36m bluez[1;37m Daemons for the bluetooth protocol stack
+[1;36m bluez-utils[1;37m Development and debugging utilities for the bluetooth protocol stack
+[1;36m bpytop[1;37m Resource monitor that shows usage and stats for processor, memory, disks, network and processes
+[1;36m brave-bin[1;37m Web browser that blocks ads and trackers by default (binary release).
+[1;36m brother-mfc-l8900cdw[1;37m LPR and CUPS driver for the Brother MFC-L8900CDW
+[1;36m cmatrix[1;37m A curses-based scrolling 'Matrix'-like screen
+[1;36m cmus[1;37m Feature-rich ncurses-based music player
+[1;36m code[1;37m The Open Source build of Visual Studio Code (vscode) editor
+[1;36m cronie[1;37m Daemon that runs specified programs at scheduled times and related tools
+[1;36m cups[1;37m The CUPS Printing System - daemon package
+[1;36m dialog[1;37m A tool to display dialog boxes from shell scripts
+[1;36m discord-ptb[1;37m All-in-one voice and text chat for gamers that's free and secure. - Public Test Build
+[1;36m dmenu[1;37m Generic menu for X
+[1;36m dosfstools[1;37m DOS filesystem utilities
+[1;36m dunst[1;37m Customizable and lightweight notification-daemon
+[1;36m efibootmgr[1;37m Linux user-space application to modify the EFI Boot Manager
+[1;36m elinks[1;37m An advanced and well-established feature-rich text mode web browser.
+[1;36m fakeroot[1;37m Tool for simulating superuser privileges
+[1;36m fbset[1;37m Framebuffer setup utility
+[1;36m feh[1;37m Fast and light imlib2-based image viewer
+[1;36m figlet[1;37m A program for making large letters out of ordinary text
+[1;36m flameshot[1;37m Powerful yet simple to use screenshot software
+[1;36m flex[1;37m A tool for generating text-scanning programs
+[1;36m fzf[1;37m Command-line fuzzy finder
+[1;36m gcc[1;37m The GNU Compiler Collection - C and C++ frontends
+[1;36m git[1;37m the fast distributed version control system
+[1;36m gitui[1;37m Blazing fast terminal-ui for git written in Rust
+[1;36m groff[1;37m GNU troff text-formatting system
+[1;36m grub[1;37m GNU GRand Unified Bootloader (2)
+[1;36m grub-customizer[1;37m A graphical grub2 settings manager
+[1;36m gtk-engines[1;37m Theme engines for GTK+ 2
+[1;36m guvcview[1;37m Simple GTK+ interface for capturing and viewing video from v4l2 devices
+[1;36m i3-gaps[1;37m A fork of i3wm tiling window manager with more features, including gaps
+[1;36m i3lock-color-git[1;37m An improved screenlocker based upon XCB and PAM with color configuration support
+[1;36m i3lock-fancy-git[1;37m i3lock-color script
+[1;36m i3status[1;37m Generates status bar to use with i3bar, dzen2 or xmobar
+[1;36m ipython[1;37m An enhanced Interactive Python shell.
+[1;36m kitty[1;37m A modern, hackable, featureful, OpenGL-based terminal emulator
+[1;36m libtool[1;37m A generic library support script
+[1;36m linux[1;37m The Linux kernel and modules
+[1;36m linux-firmware[1;37m Firmware files for Linux
+[1;36m linux-headers[1;37m Headers and scripts for building modules for the Linux kernel
+[1;36m lxappearance[1;37m Feature-rich GTK+ theme switcher of the LXDE Desktop
+[1;36m m4[1;37m The GNU macro processor
+[1;36m make[1;37m GNU make utility to maintain groups of programs
+[1;36m materia-gtk-theme[1;37m A Material Design theme for GNOME/GTK+ based desktop environments
+[1;36m mediainfo[1;37m Supplies technical and tag information about a video or audio file (CLI interface)
+[1;36m mtools[1;37m A collection of utilities to access MS-DOS disks
+[1;36m mutt-wizard[1;37m Simple interface to auto-configure neomutt and isync with safe passwords
+[1;36m ncdu[1;37m Disk usage analyzer with an ncurses interface
+[1;36m neofetch[1;37m A CLI system information tool written in BASH that supports displaying images.
+[1;36m neovim-nightly-bin[1;37m Fork of Vim aiming to improve user experience, plugins, and GUIs - Nightly Builds
+[1;36m network-manager-applet[1;37m Applet for managing network connections
+[1;36m networkmanager[1;37m Network connection manager and user applications
+[1;36m nitrogen[1;37m Background browser and setter for X windows
+[1;36m node-gyp[1;37m Node.js native addon build tool
+[1;36m nodejs[1;37m Evented I/O for V8 javascript
+[1;36m noto-fonts[1;37m Google Noto TTF fonts
+[1;36m noto-fonts-emoji[1;37m Google Noto emoji fonts
+[1;36m npm[1;37m A package manager for javascript
+[1;36m nss-mdns[1;37m glibc plugin providing host name resolution via mDNS
+[1;36m ntfs-3g[1;37m NTFS filesystem driver and utilities
+[1;36m ntp[1;37m Network Time Protocol reference implementation
+[1;36m numlockx[1;37m Turns on the numlock key in X11.
+[1;36m nvidia[1;37m NVIDIA drivers for linux
+[1;36m nvidia-settings[1;37m Tool for configuring the NVIDIA graphics driver
+[1;36m nvidia-utils[1;37m NVIDIA drivers utilities
+[1;36m os-prober[1;37m Utility to detect other OSes on a set of drives
+[1;36m pacman-contrib[1;37m Contributed scripts and tools for pacman systems
+[1;36m patch[1;37m A utility to apply patch files to original sources
+[1;36m pavucontrol[1;37m PulseAudio Volume Control
+[1;36m picom[1;37m X compositor that may fix tearing issues
+[1;36m pkgconf[1;37m Package compiler and linker metadata toolkit
+[1;36m playerctl[1;37m mpris media player controller and lib for spotify, vlc, audacious, bmp, xmms2, and others.
+[1;36m powerline-fonts[1;37m patched fonts for powerline
+[1;36m pulseaudio-alsa[1;37m ALSA Configuration for PulseAudio
+[1;36m pulseaudio-jack[1;37m Jack support for PulseAudio
+[1;36m python-pip[1;37m The PyPA recommended tool for installing Python packages
+[1;36m python-pywal[1;37m Generate and change colorschemes on the fly
+[1;36m python-spotdl[1;37m Download songs from YouTube using Spotify song URLs or playlists with albumart and meta-tags.
+[1;36m qalculate-gtk[1;37m GTK frontend for libqalculate
+[1;36m ranger[1;37m Simple, vim-like file manager
+[1;36m rofi[1;37m A window switcher, application launcher and dmenu replacement
+[1;36m sudo[1;37m Give certain users the ability to run some commands as root
+[1;36m sxiv[1;37m Simple X Image Viewer
+[1;36m system-config-printer[1;37m A CUPS printer configuration tool and status applet
+[1;36m taskwarrior-tui[1;37m A terminal user interface for taskwarrior
+[1;36m texinfo[1;37m GNU documentation system for on-line information and printed output
+[1;36m ttf-fira-code[1;37m Monospaced font with programming ligatures
+[1;36m ttf-font-awesome[1;37m Iconic font designed for Bootstrap
+[1;36m ttf-hack[1;37m A hand groomed and optically balanced typeface based on Bitstream Vera Mono.
+[1;36m ttf-ms-fonts[1;37m Core TTF Fonts from Microsoft
+[1;36m ttf-ubuntu-font-family[1;37m Ubuntu font family
+[1;36m tuxi-git[1;37m A CLI tool that scrapes Google search results and SERPs to provide instant and concise answers
+[1;36m ueberzug[1;37m Command line util which allows to display images in combination with X11
+[1;36m unzip[1;37m For extracting and viewing files in .zip archives
+[1;36m update-grub[1;37m Simple wrapper around grub-mkconfig
+[1;36m w3m[1;37m Text-based Web browser as well as pager
+[1;36m wget[1;37m Network utility to retrieve files from the Web
+[1;36m which[1;37m A utility to show the full path of commands
+[1;36m wireless_tools[1;37m Tools allowing to manipulate the Wireless Extensions
+[1;36m wpa_supplicant[1;37m A utility providing key negotiation for WPA wireless networks
+[1;36m xclip[1;37m Command line interface to the X11 clipboard
+[1;36m xcursor-neutral[1;37m A smoothed and shadowed X cursors theme
+[1;36m xcursor-themes[1;37m X.org Cursor themes
+[1;36m xdg-user-dirs[1;37m Manage user directories like ~/Desktop and ~/Music
+[1;36m xdotool[1;37m Command-line X11 automation tool
+[1;36m xf86-video-vesa[1;37m X.org vesa video driver
+[1;36m xorg-bdftopcf[1;37m Convert X font from Bitmap Distribution Format to Portable Compiled Format
+[1;36m xorg-docs[1;37m X.org documentations
+[1;36m xorg-font-util[1;37m X.Org font utilities
+[1;36m xorg-fonts-100dpi[1;37m X.org 100dpi fonts
+[1;36m xorg-fonts-75dpi[1;37m X.org 75dpi fonts
+[1;36m xorg-iceauth[1;37m ICE authority file utility
+[1;36m xorg-mkfontscale[1;37m Create an index of scalable font files for X
+[1;36m xorg-server-devel[1;37m Development files for the X.Org X server
+[1;36m xorg-server-xephyr[1;37m A nested X server that runs as an X application
+[1;36m xorg-server-xnest[1;37m A nested X server that runs as an X application
+[1;36m xorg-server-xvfb[1;37m Virtual framebuffer X server
+[1;36m xorg-sessreg[1;37m Register X sessions in system utmp/utmpx databases
+[1;36m xorg-smproxy[1;37m Allows X applications that do not support X11R6 session management to participate in an X11R6 session
+[1;36m xorg-x11perf[1;37m Simple X server performance benchmarker
+[1;36m xorg-xauth[1;37m X.Org authorization settings program
+[1;36m xorg-xbacklight[1;37m RandR-based backlight control application
+[1;36m xorg-xcmsdb[1;37m Device Color Characterization utility for X Color Management System
+[1;36m xorg-xcursorgen[1;37m Create an X cursor file from PNG images
+[1;36m xorg-xdpyinfo[1;37m Display information utility for X
+[1;36m xorg-xdriinfo[1;37m Query configuration information of DRI drivers
+[1;36m xorg-xev[1;37m Print contents of X events
+[1;36m xorg-xgamma[1;37m Alter a monitor's gamma correction
+[1;36m xorg-xhost[1;37m Server access control program for X
+[1;36m xorg-xinit[1;37m X.Org initialisation program
+[1;36m xorg-xinput[1;37m Small commandline tool to configure devices
+[1;36m xorg-xkbevd[1;37m XKB event daemon
+[1;36m xorg-xkbutils[1;37m XKB utility demos
+[1;36m xorg-xkill[1;37m Kill a client by its X resource
+[1;36m xorg-xlsatoms[1;37m List interned atoms defined on server
+[1;36m xorg-xlsclients[1;37m List client applications running on a display
+[1;36m xorg-xmodmap[1;37m Utility for modifying keymaps and button mappings
+[1;36m xorg-xpr[1;37m Print an X window dump from xwd
+[1;36m xorg-xprop[1;37m Property displayer for X
+[1;36m xorg-xrandr[1;37m Primitive command line interface to RandR extension
+[1;36m xorg-xrdb[1;37m X server resource database utility
+[1;36m xorg-xrefresh[1;37m Refresh all or part of an X screen
+[1;36m xorg-xset[1;37m User preference utility for X
+[1;36m xorg-xsetroot[1;37m Classic X utility to set your root window background to a given pattern or color
+[1;36m xorg-xvinfo[1;37m Prints out the capabilities of any video adaptors associated with the display that are accessible through the X-Video extension
+[1;36m xorg-xwayland[1;37m run X clients under wayland
+[1;36m xorg-xwd[1;37m X Window System image dumping utility
+[1;36m xorg-xwininfo[1;37m Command-line utility to print information about windows on an X server
+[1;36m xorg-xwud[1;37m X Window System image undumping utility
+[1;36m yarn[1;37m Fast, reliable, and secure dependency management
+[1;36m yay-git[1;37m Yet another yogurt. Pacman wrapper and AUR helper written in go. (development version)
+[1;36m ytfzf-git[1;37m A posix script to find and watch youtube videos from the terminal. (With out API)
+[1;36m zathura[1;37m Minimalistic document viewer
+[1;36m zathura-pdf-mupdf[1;37m PDF support for Zathura (MuPDF backend) (Supports PDF, ePub, and OpenXPS)
+[1;36m zoom[1;37m Video Conferencing and Web Conferencing Service
+[1;36m zsh[1;37m A very advanced and programmable command interpreter (shell) for UNIX
+[1;36m 10ff-git[1;37m Typing tests in CLI
+[1;36m 3mux[1;37m Terminal multiplexer inspired by i3
+[1;36m alsa-utils[1;37m Advanced Linux Sound Architecture - Utilities
+[1;36m asciiquarium[1;37m An aquarium/sea animation in ASCII art
+[1;36m asoundconf[1;37m utility to read and change the user's ALSA library configuration
+[1;36m autoconf[1;37m A GNU tool for automatically configuring source code
+[1;36m automake[1;37m A GNU tool for automatically creating Makefiles
+[1;36m base[1;37m Minimal package set to define a basic Arch Linux installation
+[1;36m binutils[1;37m A set of programs to assemble and manipulate binary and object files
+[1;36m bison[1;37m The GNU general-purpose parser generator
+[1;36m blueman[1;37m GTK+ Bluetooth Manager
+[1;36m bluez[1;37m Daemons for the bluetooth protocol stack
+[1;36m bluez-utils[1;37m Development and debugging utilities for the bluetooth protocol stack
+[1;36m bpytop[1;37m Resource monitor that shows usage and stats for processor, memory, disks, network and processes
+[1;36m brave-bin[1;37m Web browser that blocks ads and trackers by default (binary release).
+[1;36m brother-mfc-l8900cdw[1;37m LPR and CUPS driver for the Brother MFC-L8900CDW
+[1;36m cmatrix[1;37m A curses-based scrolling 'Matrix'-like screen
+[1;36m cmus[1;37m Feature-rich ncurses-based music player
+[1;36m code[1;37m The Open Source build of Visual Studio Code (vscode) editor
+[1;36m cronie[1;37m Daemon that runs specified programs at scheduled times and related tools
+[1;36m cups[1;37m The CUPS Printing System - daemon package
+[1;36m dialog[1;37m A tool to display dialog boxes from shell scripts
+[1;36m discord-ptb[1;37m All-in-one voice and text chat for gamers that's free and secure. - Public Test Build
+[1;36m dmenu[1;37m Generic menu for X
+[1;36m dosfstools[1;37m DOS filesystem utilities
+[1;36m dunst[1;37m Customizable and lightweight notification-daemon
+[1;36m efibootmgr[1;37m Linux user-space application to modify the EFI Boot Manager
+[1;36m elinks[1;37m An advanced and well-established feature-rich text mode web browser.
+[1;36m fakeroot[1;37m Tool for simulating superuser privileges
+[1;36m fbset[1;37m Framebuffer setup utility
+[1;36m feh[1;37m Fast and light imlib2-based image viewer
+[1;36m figlet[1;37m A program for making large letters out of ordinary text
+[1;36m flameshot[1;37m Powerful yet simple to use screenshot software
+[1;36m flex[1;37m A tool for generating text-scanning programs
+[1;36m fzf[1;37m Command-line fuzzy finder
+[1;36m gcc[1;37m The GNU Compiler Collection - C and C++ frontends
+[1;36m git[1;37m the fast distributed version control system
+[1;36m gitui[1;37m Blazing fast terminal-ui for git written in Rust
+[1;36m groff[1;37m GNU troff text-formatting system
+[1;36m grub[1;37m GNU GRand Unified Bootloader (2)
+[1;36m grub-customizer[1;37m A graphical grub2 settings manager
+[1;36m gtk-engines[1;37m Theme engines for GTK+ 2
+[1;36m guvcview[1;37m Simple GTK+ interface for capturing and viewing video from v4l2 devices
+[1;36m i3-gaps[1;37m A fork of i3wm tiling window manager with more features, including gaps
+[1;36m i3lock-color-git[1;37m An improved screenlocker based upon XCB and PAM with color configuration support
+[1;36m i3lock-fancy-git[1;37m i3lock-color script
+[1;36m i3status[1;37m Generates status bar to use with i3bar, dzen2 or xmobar
+[1;36m ipython[1;37m An enhanced Interactive Python shell.
+[1;36m kitty[1;37m A modern, hackable, featureful, OpenGL-based terminal emulator
+[1;36m libtool[1;37m A generic library support script
+[1;36m linux[1;37m The Linux kernel and modules
+[1;36m linux-firmware[1;37m Firmware files for Linux
+[1;36m linux-headers[1;37m Headers and scripts for building modules for the Linux kernel
+[1;36m lxappearance[1;37m Feature-rich GTK+ theme switcher of the LXDE Desktop
+[1;36m m4[1;37m The GNU macro processor
+[1;36m make[1;37m GNU make utility to maintain groups of programs
+[1;36m materia-gtk-theme[1;37m A Material Design theme for GNOME/GTK+ based desktop environments
+[1;36m mediainfo[1;37m Supplies technical and tag information about a video or audio file (CLI interface)
+[1;36m mtools[1;37m A collection of utilities to access MS-DOS disks
+[1;36m mutt-wizard[1;37m Simple interface to auto-configure neomutt and isync with safe passwords
+[1;36m ncdu[1;37m Disk usage analyzer with an ncurses interface
+[1;36m neofetch[1;37m A CLI system information tool written in BASH that supports displaying images.
+[1;36m neovim-nightly-bin[1;37m Fork of Vim aiming to improve user experience, plugins, and GUIs - Nightly Builds
+[1;36m network-manager-applet[1;37m Applet for managing network connections
+[1;36m networkmanager[1;37m Network connection manager and user applications
+[1;36m nitrogen[1;37m Background browser and setter for X windows
+[1;36m node-gyp[1;37m Node.js native addon build tool
+[1;36m nodejs[1;37m Evented I/O for V8 javascript
+[1;36m noto-fonts[1;37m Google Noto TTF fonts
+[1;36m noto-fonts-emoji[1;37m Google Noto emoji fonts
+[1;36m npm[1;37m A package manager for javascript
+[1;36m nss-mdns[1;37m glibc plugin providing host name resolution via mDNS
+[1;36m ntfs-3g[1;37m NTFS filesystem driver and utilities
+[1;36m ntp[1;37m Network Time Protocol reference implementation
+[1;36m numlockx[1;37m Turns on the numlock key in X11.
+[1;36m nvidia[1;37m NVIDIA drivers for linux
+[1;36m nvidia-settings[1;37m Tool for configuring the NVIDIA graphics driver
+[1;36m nvidia-utils[1;37m NVIDIA drivers utilities
+[1;36m os-prober[1;37m Utility to detect other OSes on a set of drives
+[1;36m pacman-contrib[1;37m Contributed scripts and tools for pacman systems
+[1;36m patch[1;37m A utility to apply patch files to original sources
+[1;36m pavucontrol[1;37m PulseAudio Volume Control
+[1;36m picom[1;37m X compositor that may fix tearing issues
+[1;36m pkgconf[1;37m Package compiler and linker metadata toolkit
+[1;36m playerctl[1;37m mpris media player controller and lib for spotify, vlc, audacious, bmp, xmms2, and others.
+[1;36m powerline-fonts[1;37m patched fonts for powerline
+[1;36m pulseaudio-alsa[1;37m ALSA Configuration for PulseAudio
+[1;36m pulseaudio-jack[1;37m Jack support for PulseAudio
+[1;36m python-pip[1;37m The PyPA recommended tool for installing Python packages
+[1;36m python-pywal[1;37m Generate and change colorschemes on the fly
+[1;36m python-spotdl[1;37m Download songs from YouTube using Spotify song URLs or playlists with albumart and meta-tags.
+[1;36m qalculate-gtk[1;37m GTK frontend for libqalculate
+[1;36m ranger[1;37m Simple, vim-like file manager
+[1;36m rofi[1;37m A window switcher, application launcher and dmenu replacement
+[1;36m sudo[1;37m Give certain users the ability to run some commands as root
+[1;36m sxiv[1;37m Simple X Image Viewer
+[1;36m system-config-printer[1;37m A CUPS printer configuration tool and status applet
+[1;36m taskwarrior-tui[1;37m A terminal user interface for taskwarrior
+[1;36m texinfo[1;37m GNU documentation system for on-line information and printed output
+[1;36m ttf-fira-code[1;37m Monospaced font with programming ligatures
+[1;36m ttf-font-awesome[1;37m Iconic font designed for Bootstrap
+[1;36m ttf-hack[1;37m A hand groomed and optically balanced typeface based on Bitstream Vera Mono.
+[1;36m ttf-ms-fonts[1;37m Core TTF Fonts from Microsoft
+[1;36m ttf-ubuntu-font-family[1;37m Ubuntu font family
+[1;36m tuxi-git[1;37m A CLI tool that scrapes Google search results and SERPs to provide instant and concise answers
+[1;36m ueberzug[1;37m Command line util which allows to display images in combination with X11
+[1;36m unzip[1;37m For extracting and viewing files in .zip archives
+[1;36m update-grub[1;37m Simple wrapper around grub-mkconfig
+[1;36m w3m[1;37m Text-based Web browser as well as pager
+[1;36m wget[1;37m Network utility to retrieve files from the Web
+[1;36m which[1;37m A utility to show the full path of commands
+[1;36m wireless_tools[1;37m Tools allowing to manipulate the Wireless Extensions
+[1;36m wpa_supplicant[1;37m A utility providing key negotiation for WPA wireless networks
+[1;36m xclip[1;37m Command line interface to the X11 clipboard
+[1;36m xcursor-neutral[1;37m A smoothed and shadowed X cursors theme
+[1;36m xcursor-themes[1;37m X.org Cursor themes
+[1;36m xdg-user-dirs[1;37m Manage user directories like ~/Desktop and ~/Music
+[1;36m xdotool[1;37m Command-line X11 automation tool
+[1;36m xf86-video-vesa[1;37m X.org vesa video driver
+[1;36m xorg-bdftopcf[1;37m Convert X font from Bitmap Distribution Format to Portable Compiled Format
+[1;36m xorg-docs[1;37m X.org documentations
+[1;36m xorg-font-util[1;37m X.Org font utilities
+[1;36m xorg-fonts-100dpi[1;37m X.org 100dpi fonts
+[1;36m xorg-fonts-75dpi[1;37m X.org 75dpi fonts
+[1;36m xorg-iceauth[1;37m ICE authority file utility
+[1;36m xorg-mkfontscale[1;37m Create an index of scalable font files for X
+[1;36m xorg-server-devel[1;37m Development files for the X.Org X server
+[1;36m xorg-server-xephyr[1;37m A nested X server that runs as an X application
+[1;36m xorg-server-xnest[1;37m A nested X server that runs as an X application
+[1;36m xorg-server-xvfb[1;37m Virtual framebuffer X server
+[1;36m xorg-sessreg[1;37m Register X sessions in system utmp/utmpx databases
+[1;36m xorg-smproxy[1;37m Allows X applications that do not support X11R6 session management to participate in an X11R6 session
+[1;36m xorg-x11perf[1;37m Simple X server performance benchmarker
+[1;36m xorg-xauth[1;37m X.Org authorization settings program
+[1;36m xorg-xbacklight[1;37m RandR-based backlight control application
+[1;36m xorg-xcmsdb[1;37m Device Color Characterization utility for X Color Management System
+[1;36m xorg-xcursorgen[1;37m Create an X cursor file from PNG images
+[1;36m xorg-xdpyinfo[1;37m Display information utility for X
+[1;36m xorg-xdriinfo[1;37m Query configuration information of DRI drivers
+[1;36m xorg-xev[1;37m Print contents of X events
+[1;36m xorg-xgamma[1;37m Alter a monitor's gamma correction
+[1;36m xorg-xhost[1;37m Server access control program for X
+[1;36m xorg-xinit[1;37m X.Org initialisation program
+[1;36m xorg-xinput[1;37m Small commandline tool to configure devices
+[1;36m xorg-xkbevd[1;37m XKB event daemon
+[1;36m xorg-xkbutils[1;37m XKB utility demos
+[1;36m xorg-xkill[1;37m Kill a client by its X resource
+[1;36m xorg-xlsatoms[1;37m List interned atoms defined on server
+[1;36m xorg-xlsclients[1;37m List client applications running on a display
+[1;36m xorg-xmodmap[1;37m Utility for modifying keymaps and button mappings
+[1;36m xorg-xpr[1;37m Print an X window dump from xwd
+[1;36m xorg-xprop[1;37m Property displayer for X
+[1;36m xorg-xrandr[1;37m Primitive command line interface to RandR extension
+[1;36m xorg-xrdb[1;37m X server resource database utility
+[1;36m xorg-xrefresh[1;37m Refresh all or part of an X screen
+[1;36m xorg-xset[1;37m User preference utility for X
+[1;36m xorg-xsetroot[1;37m Classic X utility to set your root window background to a given pattern or color
+[1;36m xorg-xvinfo[1;37m Prints out the capabilities of any video adaptors associated with the display that are accessible through the X-Video extension
+[1;36m xorg-xwayland[1;37m run X clients under wayland
+[1;36m xorg-xwd[1;37m X Window System image dumping utility
+[1;36m xorg-xwininfo[1;37m Command-line utility to print information about windows on an X server
+[1;36m xorg-xwud[1;37m X Window System image undumping utility
+[1;36m yarn[1;37m Fast, reliable, and secure dependency management
+[1;36m yay-git[1;37m Yet another yogurt. Pacman wrapper and AUR helper written in go. (development version)
+[1;36m ytfzf-git[1;37m A posix script to find and watch youtube videos from the terminal. (With out API)
+[1;36m zathura[1;37m Minimalistic document viewer
+[1;36m zathura-pdf-mupdf[1;37m PDF support for Zathura (MuPDF backend) (Supports PDF, ePub, and OpenXPS)
+[1;36m zoom[1;37m Video Conferencing and Web Conferencing Service
+[1;36m zsh[1;37m A very advanced and programmable command interpreter (shell) for UNIX
