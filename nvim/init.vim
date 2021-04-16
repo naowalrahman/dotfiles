@@ -25,6 +25,7 @@ Plug 'rafamadriz/friendly-snippets'
 Plug 'kamykn/spelunker.vim'
 Plug 'romgrk/barbar.nvim'
 Plug 'frazrepo/vim-rainbow'
+Plug 'karb94/neoscroll.nvim' 
 
 call plug#end()
 
@@ -383,3 +384,7 @@ nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
 
 " rainbow brackets
 let g:rainbow_active = 1
+
+
+" neoscroll: smooth scrolling
+lua require('neoscroll').setup()
