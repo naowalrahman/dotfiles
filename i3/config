@@ -189,11 +189,13 @@ bindsym $mod+r mode "resize"
 bar {
 	status_command i3status | i3status-title-on-bar --fixed-width 140 --color '#80AAFF'
 	position top
+	separator_symbol "  "
 	
 	colors {
 
 		background #212121
 		urgent_workspace #2f343a #1f2a57 #ffffff
+		separator #ffffff
 
 	}
 }
@@ -202,7 +204,7 @@ bar {
 bindsym $mod+s exec /usr/bin/kitty -e bpytop
 
 # start picom by default
-exec picom &
+exec_always picom &
 
 # start discord 
 bindsym $mod+Ctrl+d exec discord-ptb
@@ -257,7 +259,7 @@ for_window [class="Guvcview"] move position 2200 400
 bindsym $mod+m exec --no-startup-id /usr/bin/kitty -e cmus
 
 # zoom meeting mode config
-set $zoom-mode "meeting: Health (h), AP Bio (b), ELA (e), Global Studies (s), Geometry (g), Spanish (p), Phys Ed (d)"
+set $zoom-mode "meeting: Health (h), AP Bio (b), ELA (e), Art (a), Global Studies (s), Geometry (g), Spanish (p), Phys Ed (d), AIS (f)"
 mode $zoom-mode {
 		# launch health meeting
 		bindsym h exec brave 'https://us02web.zoom.us/j/89089331322?pwd=MjdRMFRXQ0FVZTFLSllhQmpGWkk0UT09'
@@ -278,13 +280,18 @@ mode $zoom-mode {
 		bindsym g exec brave 'https://meet.google.com/lookup/hcee3ribys'
 		
 		# launch spanish meeting
-		bindsym p exec brave 'https://us02web.zoom.us/j/89195136731?pwd=RHV2cEVlZzFpTTFBQ3BGcGtpSGU3QT09' 
+		bindsym p exec brave 'https://us02web.zoom.us/j/89314525006?pwd=VUpvdmthRkZZcFVqL2srVzM4TlozZz09'
 
 		# launch phys ed meeting 
 		bindsym d exec brave 'https://meet.google.com/lookup/gzkqldbu7g'
 
+		# launch Ms. Maggio's AIS meeting
+		bindsym f exec brave 'https://us02web.zoom.us/j/82626614555?pwd=TFkyZkNudTUzaEh2Wm1aSXpSTzhEZz09'
+
 		# exit zoom meeting mode and go back to default mode
 		bindsym $mod+z mode "default"
+		bindsym Escape mode "default" 
+		bindsym Return mode "default"
 }
 # zoom meeting launch mode
 bindsym $mod+z mode $zoom-mode 
@@ -314,5 +321,3 @@ for_window [title="taskwarrior-tui"] resize set width 503
 for_window [title="taskwarrior-tui"] resize set height 594
 for_window [title="taskwarrior-tui"] move position 22 822
 
-# execute imwheel at startup
-exec_always /usr/bin/imwheel 

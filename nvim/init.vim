@@ -22,6 +22,9 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim' 
 Plug 'rafamadriz/friendly-snippets'
+Plug 'kamykn/spelunker.vim'
+Plug 'romgrk/barbar.nvim'
+Plug 'frazrepo/vim-rainbow'
 
 call plug#end()
 
@@ -82,21 +85,17 @@ set t_Co=256
 
 
 " fuzzy finder
-nnoremap <C-p> :FZF<CR>
+nnoremap <C-p> :Files<CR>
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit'
   \}
 
-let g:nvim_tree_side = 'right' "left by default
-let g:nvim_tree_width = 40 "30 by default
 let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ] "empty by default
 let g:nvim_tree_gitignore = 1 "0 by default
-let g:nvim_tree_auto_open = 1 "0 by default, opens the tree when typing `vim $DIR` or `vim`
 let g:nvim_tree_auto_close = 1 "0 by default, closes the tree when it's the last window
 let g:nvim_tree_auto_ignore_ft = [ 'startify', 'dashboard' ] "empty by default, don't auto open tree on specific filetypes.
-let g:nvim_tree_quit_on_open = 1 "0 by default, closes the tree when you open a file
 let g:nvim_tree_follow = 1 "0 by default, this option allows the cursor to be updated when entering a buffer
 let g:nvim_tree_indent_markers = 1 "0 by default, this option shows indent markers when folders are open
 let g:nvim_tree_hide_dotfiles = 1 "0 by default, this option hides files and folders starting with a dot `.`
@@ -111,7 +110,7 @@ let g:nvim_tree_group_empty = 1 " 0 by default, compact folders that only contai
 let g:nvim_tree_show_icons = {
     \ 'git': 1,
     \ 'folders': 0,
-    \ 'files': 0,
+    \ 'files': 1,
     \ }
 "If 0, do not show the icons for one of 'git' 'folder' and 'files'
 "1 by default, notice that if 'files' is 1, it will only display
@@ -304,3 +303,83 @@ let g:neosnippet#snippets_directory ='~/.vim/plugged/friendly-snippets/snippets'
 " use ranger instead of netrw
 let g:NERDTreeHijackNetrw = 0
 let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
+
+
+let g:enable_spelunker_vim = 1
+" Enable spelunker.vim on readonly files or buffer. (default: 0)
+" 1: enable
+" 0: disable
+let g:enable_spelunker_vim_on_readonly = 0
+let g:spelunker_target_min_char_len = 4
+let g:spelunker_max_suggest_words = 15
+let g:spelunker_max_hi_words_each_buf = 100
+" 1: File is checked for spelling mistakes when opening and saving. This
+" may take a bit of time on large files.
+" 2: Spellcheck displayed words in buffer. Fast and dynamic. The waiting time
+" depends on the setting of CursorHold `set updatetime=1000`.
+let g:spelunker_check_type = 2
+" 1: Highlight all types (SpellBad, SpellCap, SpellRare, SpellLocal).
+" 2: Highlight only SpellBad.
+" FYI: https://vim-jp.org/vimdoc-en/spell.html#spell-quickstart
+let g:spelunker_highlight_type = 1
+" Disable URI checking. (default: 0)
+let g:spelunker_disable_uri_checking = 1
+let g:spelunker_disable_email_checking = 1
+" Disable account name checking, e.g. @foobar, foobar@. (default: 0)
+" NOTE: Spell checking is also disabled for JAVA annotations.
+let g:spelunker_disable_account_name_checking = 1
+let g:spelunker_disable_acronym_checking = 1
+let g:spelunker_disable_backquoted_checking = 1
+" Create own custom autogroup to enable spelunker.vim for specific filetypes.
+augroup spelunker
+  autocmd!
+  " Setting for g:spelunker_check_type = 1:
+  autocmd BufWinEnter,BufWritePost *.vim,*.js,*.jsx,*.json,*.md call spelunker#check()
+  " Setting for g:spelunker_check_type = 2:
+  autocmd CursorHold *.vim,*.js,*.jsx,*.json,*.md call spelunker#check_displayed_words()
+augroup END
+let g:spelunker_spell_bad_group = 'SpelunkerSpellBad'
+let g:spelunker_complex_or_compound_word_group = 'SpelunkerComplexOrCompoundWord'
+" Override highlight setting.
+highlight SpelunkerSpellBad cterm=underline ctermfg=247 gui=underline guifg=#9e9e9e
+highlight SpelunkerComplexOrCompoundWord cterm=underline ctermfg=NONE gui=underline guifg=NONE1
+
+
+" barbar configuration
+" Move to previous/next
+nnoremap <silent>    <A-,> :BufferPrevious<CR>
+nnoremap <silent>    <A-.> :BufferNext<CR>
+" Re-order to previous/next
+nnoremap <silent>    <A-<> :BufferMovePrevious<CR>
+nnoremap <silent>    <A->> :BufferMoveNext<CR>
+" Goto buffer in position...
+nnoremap <silent>    <A-1> :BufferGoto 1<CR>
+nnoremap <silent>    <A-2> :BufferGoto 2<CR>
+nnoremap <silent>    <A-3> :BufferGoto 3<CR>
+nnoremap <silent>    <A-4> :BufferGoto 4<CR>
+nnoremap <silent>    <A-5> :BufferGoto 5<CR>
+nnoremap <silent>    <A-6> :BufferGoto 6<CR>
+nnoremap <silent>    <A-7> :BufferGoto 7<CR>
+nnoremap <silent>    <A-8> :BufferGoto 8<CR>
+nnoremap <silent>    <A-9> :BufferLast<CR>
+" Close buffer
+nnoremap <silent>    <A-c> :BufferClose<CR>
+" Wipeout buffer
+"                          :BufferWipeout<CR>
+" Close commands
+"                          :BufferCloseAllButCurrent<CR>
+"                          :BufferCloseBuffersLeft<CR>
+"                          :BufferCloseBuffersRight<CR>
+" Magic buffer-picking mode
+nnoremap <silent> <C-s>    :BufferPick<CR>
+" Sort automatically by...
+nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
+nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
+
+" Other:
+" :BarbarEnable - enables barbar (enabled by default)
+" :BarbarDisable - very bad command, should never be used
+
+
+" rainbow brackets
+let g:rainbow_active = 1

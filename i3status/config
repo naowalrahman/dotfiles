@@ -20,7 +20,7 @@ order += "volume master"
 order += "tztime newyork"
 
 wireless _first_ {
-        format_up = "   W: (%quality at %essid, %bitrate ) %ip   "
+        format_up = " 直 (%quality at %essid, %bitrate ) %ip "
         format_down = "W: down"
 }
 
@@ -34,35 +34,35 @@ battery all {
 }
 
 disk "/" {
-        format = "   Disk: %used/%total   "
+        format = "  %used/%total "
 }
 
 cpu_usage {
-        format = "   %usage CPU   "
+        format = "  %usage "
 }
 
 memory {
-        format = "   RAM: %used/%total   "
+        format = "   %used/%total "
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
 
 tztime newyork {
 
-        format = "   %m/%d/%Y %I:%M %Z   "
+        format = "  %m/%d/%Y  %I:%M %Z "
         timezone = "US/Eastern"
        
 }
 
 volume master {
-	format = "   Volume: %volume   "
-        format_muted = "   Volume: muted (%volume)   "
+	format = " 奄 %volume "
+        format_muted = " 婢 (%volume) "
         device = "default"
         mixer = "Master"
         mixer_idx = 0
 }
 
 read_file Uptime { 
-	format = "   %title: %content   "
+	format = " %title: %content "
 	path = "/tmp/uptime"
 }
