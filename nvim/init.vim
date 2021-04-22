@@ -10,8 +10,7 @@ Plug 'gcmt/taboo.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'KarlWithK/gruvbox'
-Plug 'mboughaba/i3config.vim'
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for': 'python' }
 Plug 'dunstontc/vim-vscode-theme' 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'alvan/vim-closetag'
@@ -26,6 +25,7 @@ Plug 'kamykn/spelunker.vim'
 Plug 'romgrk/barbar.nvim'
 Plug 'frazrepo/vim-rainbow'
 Plug 'karb94/neoscroll.nvim' 
+Plug 'kyoz/purify', { 'rtp': 'vim' }
 
 call plug#end()
 
@@ -33,7 +33,8 @@ call plug#end()
 " config
 set number
 set relativenumber
-colorscheme dark_plus
+syntax on
+colorscheme purify
 let g:gruvbox_contrast_dark='hard'
 set wrap
 "set smartindent
@@ -45,6 +46,7 @@ set updatetime=300
 set breakindent
 set formatoptions=1
 set lbr
+set nospell
 
 
 " turn terminal to normal mode with escape
@@ -140,7 +142,12 @@ let g:nvim_tree_icons = {
     \   }
     \ }
 
-nnoremap <C-b> :NvimTreeToggle<CR>
+
+" neoscroll: smooth scrolling
+lua require('neoscroll').setup()
+
+
+nnoremap <C-h> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
 " NvimTreeOpen and NvimTreeClose are also available if you need them
@@ -150,11 +157,6 @@ set termguicolors " this variable must be enabled for colors to be applied prope
 " a list of groups can be found at `:help nvim_tree_highlight`
 highlight NvimTreeFolderIcon guibg=blue
 
-" recognize i3 filetype
-aug i3config_ft_detection
-  au!
-  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
-aug end
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -332,14 +334,15 @@ let g:spelunker_disable_account_name_checking = 1
 let g:spelunker_disable_acronym_checking = 1
 let g:spelunker_disable_backquoted_checking = 1
 " Create own custom autogroup to enable spelunker.vim for specific filetypes.
+let g:spelunker_disable_auto_group = 1
 augroup spelunker
   autocmd!
-  " Setting for g:spelunker_check_type = 1:
-  autocmd BufWinEnter,BufWritePost *.vim,*.js,*.jsx,*.json,*.md call spelunker#check()
   " Setting for g:spelunker_check_type = 2:
-  autocmd CursorHold *.vim,*.js,*.jsx,*.json,*.md call spelunker#check_displayed_words()
+  autocmd BufWinEnter,BufWritePost *.md,*.txt,*.html call spelunker#check_displayed_words()
 augroup END
 let g:spelunker_spell_bad_group = 'SpelunkerSpellBad'
+" Override highlight group name of complex or compound words. (default:
+" 'SpelunkerComplexOrCompoundWord')
 let g:spelunker_complex_or_compound_word_group = 'SpelunkerComplexOrCompoundWord'
 " Override highlight setting.
 highlight SpelunkerSpellBad cterm=underline ctermfg=247 gui=underline guifg=#9e9e9e
@@ -383,8 +386,6 @@ nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
 
 
 " rainbow brackets
-let g:rainbow_active = 1
+" let g:rainbow_active = 1
 
 
-" neoscroll: smooth scrolling
-lua require('neoscroll').setup()
