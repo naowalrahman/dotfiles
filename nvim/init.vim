@@ -1,7 +1,6 @@
 " Plugin section
 call plug#begin('~/.vim/plugged')
 
-Plug 'dikiaap/minimalist'
 Plug 'tpope/vim-fugitive'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plug 'vim-airline/vim-airline'
@@ -9,9 +8,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'gcmt/taboo.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'KarlWithK/gruvbox'
-Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for': 'python' }
-Plug 'dunstontc/vim-vscode-theme' 
+Plug 'mboughaba/i3config.vim'
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'alvan/vim-closetag'
 Plug 'Shougo/neosnippet.vim'
@@ -25,7 +23,10 @@ Plug 'kamykn/spelunker.vim'
 Plug 'romgrk/barbar.nvim'
 Plug 'frazrepo/vim-rainbow'
 Plug 'karb94/neoscroll.nvim' 
+Plug 'gabrielelana/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'Th3Whit3Wolf/one-nvim'
 
 call plug#end()
 
@@ -33,7 +34,6 @@ call plug#end()
 " config
 set number
 set relativenumber
-syntax on
 colorscheme purify
 let g:gruvbox_contrast_dark='hard'
 set wrap
@@ -46,7 +46,6 @@ set updatetime=300
 set breakindent
 set formatoptions=1
 set lbr
-set nospell
 
 
 " turn terminal to normal mode with escape
@@ -142,11 +141,6 @@ let g:nvim_tree_icons = {
     \   }
     \ }
 
-
-" neoscroll: smooth scrolling
-lua require('neoscroll').setup()
-
-
 nnoremap <C-h> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
@@ -157,6 +151,11 @@ set termguicolors " this variable must be enabled for colors to be applied prope
 " a list of groups can be found at `:help nvim_tree_highlight`
 highlight NvimTreeFolderIcon guibg=blue
 
+" recognize i3 filetype
+aug i3config_ft_detection
+  au!
+  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+aug end
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -337,12 +336,12 @@ let g:spelunker_disable_backquoted_checking = 1
 let g:spelunker_disable_auto_group = 1
 augroup spelunker
   autocmd!
+  " Setting for g:spelunker_check_type = 1:
+  autocmd BufWinEnter,BufWritePost *.md,*.html,*.txt call spelunker#check()
   " Setting for g:spelunker_check_type = 2:
-  autocmd BufWinEnter,BufWritePost *.md,*.txt,*.html call spelunker#check_displayed_words()
+  autocmd CursorHold *.md,*.html,*.txt call spelunker#check_displayed_words()
 augroup END
 let g:spelunker_spell_bad_group = 'SpelunkerSpellBad'
-" Override highlight group name of complex or compound words. (default:
-" 'SpelunkerComplexOrCompoundWord')
 let g:spelunker_complex_or_compound_word_group = 'SpelunkerComplexOrCompoundWord'
 " Override highlight setting.
 highlight SpelunkerSpellBad cterm=underline ctermfg=247 gui=underline guifg=#9e9e9e
@@ -389,3 +388,7 @@ nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
 " let g:rainbow_active = 1
 
 
+" neoscroll: smooth scrolling
+lua require('neoscroll').setup()
+
+let g:markdown_enable_mappings = 0
