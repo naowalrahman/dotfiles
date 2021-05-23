@@ -30,8 +30,7 @@ ethernet _first_ {
 }
 
 battery all {
-        format = "%status %percentage %remaining"
-}
+        format = "%status %percentage %remaining" }
 
 disk "/" {
         format = "  %used/%total "
@@ -49,7 +48,7 @@ memory {
 
 tztime newyork {
 
-        format = "  %m/%d/%Y  %I:%M %Z "
+        format = "   %a %b %e %Y - %I:%M %p "
         timezone = "US/Eastern"
        
 }

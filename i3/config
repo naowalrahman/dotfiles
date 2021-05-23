@@ -12,7 +12,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango: Ubuntu Regular 11
+font pango: SF Pro Display Medium 11.0
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -28,6 +28,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+
+# Start a volume systray icon so volume can be changed with the mouse. 
+exec --no-startup-id volumeicon
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -54,6 +57,12 @@ bindsym $mod+Shift+Return exec /usr/bin/brave # start brave with default fps of 
 
 # start ranger file manager
 bindsym $mod+Shift+n exec /usr/bin/kitty -e ranger
+
+# start pcmanfm file manager
+bindsym $mod+shift+p exec pcmanfm
+
+# open notification center
+bindsym $mod+n exec kill -s USR1 $(pidof deadd-notification-center)
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -156,6 +165,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+p exec "i3-nagbar -t warning -m 'Do you want to shut down this pc?' -B 'Shut down' 'poweroff'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -238,6 +248,7 @@ client.background       $bg
 # screenshot tool
 bindsym $mod+Shift+s exec --no-startup-id /usr/bin/flameshot gui
 bindsym $mod+Ctrl+s exec --no-startup-id /usr/bin/flameshot full -c
+bindsym Print exec --no-startup-id /usr/bin/flameshot full -c
 
 for_window [class="^.*"] border pixel 2
 new_window pixel 2
@@ -311,14 +322,19 @@ exec_always --no-startup-id numlockx on
 # qalculate window setting (floating) 
 bindsym $mod+q exec /usr/bin/qalculate-gtk
 for_window [class="Qalculate-gtk"] floating enable
-for_window [class="Qalculate-gtk"] resize set width 810
-for_window [class="Qalculate-gtk"] resize set height 567
-for_window [class="Qalculate-gtk"] move position 2608 850
+for_window [class="Qalculate-gtk"] resize set width 826
+for_window [class="Qalculate-gtk"] resize set height 577
+for_window [class="Qalculate-gtk"] move position 2592 840
 
 # open taskwarrior
-bindsym $mod+t exec /usr/bin/kitty -e taskwarrior-tui
+bindsym $mod+t exec kitty --config /home/naowal/.config/kitty/tt.conf -e taskwarrior-tui 
 for_window [title="taskwarrior-tui"] floating enable 
 for_window [title="taskwarrior-tui"] resize set width 503
 for_window [title="taskwarrior-tui"] resize set height 594
 for_window [title="taskwarrior-tui"] move position 22 822
 
+# search for files
+bindsym $mod+Mod1+f exec pcmanfm -d -f
+
+bindsym $mod+Ctrl+z border normal 2
+bindsym $mod+Ctrl+x border pixel 2

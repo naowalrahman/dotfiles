@@ -35,7 +35,6 @@ call plug#end()
 set number
 set relativenumber
 colorscheme purify
-let g:gruvbox_contrast_dark='hard'
 set wrap
 "set smartindent
 filetype indent on
@@ -47,6 +46,10 @@ set breakindent
 set formatoptions=1
 set lbr
 
+" airline
+let g:airline_theme='base16_spacemacs'
+let g:airline_powerline_fonts = 1
+set t_Co=256
 
 " turn terminal to normal mode with escape
 tnoremap <Esc> <C-\><C-n>
@@ -73,17 +76,8 @@ nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
 
-if (has("termguicolors"))
- set termguicolors
-endif
+set termguicolors
 syntax enable
-
-
-" airline
-let g:airline_theme='deus'
-let g:airline_powerline_fonts = 1
-set t_Co=256
-
 
 
 " fuzzy finder
@@ -392,3 +386,6 @@ nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
 lua require('neoscroll').setup()
 
 let g:markdown_enable_mappings = 0
+
+" semshi 
+let g:semshi#simplify_markup = v:true
