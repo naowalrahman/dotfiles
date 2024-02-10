@@ -1,7 +1,7 @@
 icons_format = "{icon}"
 
 [theme]
-theme = "slick"
+theme = "ctp-mocha"
 
 [theme.overrides]
 # idle_bg = "#123456"
@@ -13,7 +13,7 @@ icons = "material-nf"
 
 [[block]]
 block = "custom"
-command = "sed 's/  //' <(curl 'https://wttr.in/?format=2' -s)  "
+command = "sed 's/  //' <(curl 'https://wttr.in/?format=2&m' -s)  "
 interval = 600
 
 [[block]]
