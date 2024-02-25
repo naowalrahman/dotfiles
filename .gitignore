@@ -1,6 +1,9 @@
 /*
 
 !.gitignore
+!README.md
+!*.png
+
 !/btop**
 !/dunst**
 !/i3**

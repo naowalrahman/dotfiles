@@ -219,6 +219,7 @@ bindsym $mod+Control+s exec ksnip -f
 
 # remove title bars
 for_window [class="^.*"] border pixel 3
+
 for_window [class="Cpupower-gui"] floating disable
 for_window [class="ksnip"] floating enable
 
