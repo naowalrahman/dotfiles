@@ -61,18 +61,6 @@ zinit lucid wait'0a' for \
     tj/git-extras
 ### End of Zinit plugins ###
 
-### Fzf-tab configuration ###
-# disable sort when completing `git checkout`
-zstyle ':completion:*:git-checkout:*' sort false
-# set descriptions format to enable group support
-zstyle ':completion:*:descriptions' format '[%d]'
-# set list-colors to enable filename colorizing
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-# preview directory's content with eza when completing cd
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
-# switch group using `,` and `.`
-zstyle ':fzf-tab:*' switch-group ',' '.'
-### End of fzf-tab configuration ###
 
 ### Conda initialize ### 
 # !! Contents within this block are managed by 'conda init' !!
@@ -88,6 +76,24 @@ else
 fi
 unset __conda_setup
 ### End of conda initialize ### 
+
+### Run onefetch on cd into git repo ###
+cd() {
+    if [ "$#" -eq 0 ]; then
+        builtin cd
+    else
+        builtin cd "$*"
+        if [ -d .git ]; then
+            onefetch
+        fi
+    fi
+}
+### End of run onefetch ###
+
+### Zsh z configuration ###
+export ZSHZ_CASE=smart
+export ZSHZ_CD=cd
+### End of zsh z configuration ###
 
 ### Variables ###
 export COLORTERM="truecolor"
@@ -107,3 +113,16 @@ alias inspiration="~/.local/bin/inspiration.sh"
 alias tree="ls --tree";
 alias gh='brave https://$(git config remote.origin.url | cut -f2 -d@ | tr ':' /)'
 ### End of variables ###
+
+### Fzf-tab configuration ###
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# preview directory's content with eza when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+# switch group using `,` and `.`
+zstyle ':fzf-tab:*' switch-group ',' '.'
+### End of fzf-tab configuration ###
