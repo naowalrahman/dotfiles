@@ -1,0 +1,27 @@
+### i3blocks config
+
+# Guess the weather hourly
+[weather]
+command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+interval=3600
+color=#A4C2F4
+
+[battery]
+command=./battery.sh
+interval=30
+color=#59f7d7
+
+[memory]
+command=./memory.sh
+interval=10
+color=#d8c770
+
+[sound]
+command=./volume.sh
+interval=5
+color=#1ec6ff
+
+[time_date]
+command=date +" %a, %b %d - %-I:%M %p"
+interval=30
+color=#ffffff
