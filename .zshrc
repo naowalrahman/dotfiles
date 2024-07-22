@@ -111,7 +111,7 @@ alias cat="bat"
 alias dgpu-status="cat /sys/bus/pci/devices/0000:01:00.0/power/runtime_status"
 alias inspiration="~/.local/bin/inspiration.sh"
 alias tree="ls --tree";
-alias gh='brave https://$(git config remote.origin.url | cut -f2 -d@ | tr ':' /)'
+alias gh='firefox https://$(git config remote.origin.url | cut -f2 -d@ | tr ':' /)'
 ### End of variables ###
 
 ### Fzf-tab configuration ###
@@ -125,4 +125,31 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 # switch group using `,` and `.`
 zstyle ':fzf-tab:*' switch-group ',' '.'
+
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
+  --highlight-line \
+  --info=inline-right \
+  --ansi \
+  --layout=reverse \
+  --border=none
+  --color=bg+:#283457 \
+  --color=bg:#16161e \
+  --color=border:#27a1b9 \
+  --color=fg:#c0caf5 \
+  --color=gutter:#16161e \
+  --color=header:#ff9e64 \
+  --color=hl+:#2ac3de \
+  --color=hl:#2ac3de \
+  --color=info:#545c7e \
+  --color=marker:#ff007c \
+  --color=pointer:#ff007c \
+  --color=prompt:#2ac3de \
+  --color=query:#c0caf5:regular \
+  --color=scrollbar:#27a1b9 \
+  --color=separator:#ff9e64 \
+  --color=spinner:#ff007c \
+"
 ### End of fzf-tab configuration ###
+
+# Add ~/.local/bin to PATH
+export PATH="/home/naowal/.local/bin:$PATH"
