@@ -1,0 +1,22 @@
+font_size: 18
+theme: tokyonight
+tree_1:
+  mail:
+    personal: "https://mail.google.com/"  
+    columbia: "https://lionmail.columbia.edu"
+  general:
+    quran: "https://quran.com"
+    amazon: "https://amazon.com"
+    youtube: "https://youtube.com"
+tree_2:
+  programming:
+    github: "https://github.com"
+    archwiki: 
+      - "https://archlinux.org/"
+      - "arch wiki"
+  CP:
+    codeforces: "https://codeforces.com"
+    atcoder: "https://atcoder.jp"
+    cses: "https://cses.fi"
+    cp-algos: "https://cp-algorithms.com"
+    handbook: "https://cses.fi/book/book.pdf"
