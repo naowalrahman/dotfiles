@@ -1,18 +1,18 @@
 # Dotfiles
 
-These are my dotfiles for Arch Linux with i3wm. 
+These are my dotfiles for Arch Linux with Hpyrland. 
 
 ## Programs
-* WM: `i3wm`
+* WM: `Hyprland`
 * Font: `FiraCode Nerd Font`
 * Shell: `zsh` with `zinit` and `tmux`
 * Prompt: `pure`
-* Terminal emulator: `kitty`
+* Terminal emulator: `foot`
 * Editor: `neovim`
-* Launcher: `rofi`
-* System info tool: `neofetch`
+* Launcher: `tofi`
+* System info tool: `fastfetch`
 * Browser: `firefox`
-* Bar: `i3status-rust`
+* Bar: `waybar`
 * System Monitor: `btop++`
 * Notification Daemon: `dunst`
 
