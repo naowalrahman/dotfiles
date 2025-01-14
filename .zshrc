@@ -1,19 +1,42 @@
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd extendedglob
 unsetopt beep nomatch notify
-bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/naowal/.zshrc'
 
+### Zsh vim mode ###
+bindkey -v
+KEYTIMEOUT=5
+
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+    if [[ ${KEYMAP} == vicmd ]] ||
+        [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+
+    elif [[ ${KEYMAP} == main ]] ||
+        [[ ${KEYMAP} == viins ]] ||
+        [[ ${KEYMAP} = '' ]] ||
+        [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+    fi
+}
+zle -N zle-keymap-select
+
+# fix cursor when exiting neovim
+_fix_cursor() {
+    echo -ne '\e[5 q'
+}
+precmd_functions+=(_fix_cursor)
+### End of zsh vim mode
+
+### The following lines were added by compinstall ###
+zstyle :compinstall filename '/home/naowal/.zshrc'
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
+### End of lines added by compinstall ###
 
-### Added by Zinit's installer
+### Added by Zinit's installer ###
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
     command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
@@ -28,11 +51,7 @@ autoload -Uz _zinit
 ### End of Zinit's installer chunk
 
 ### Zinit plugins ###
-zinit ice depth=1
-zinit light jeffreytse/zsh-vi-mode
-
-zinit ice pick"async.zsh" src"pure.zsh"
-zinit light sindresorhus/pure
+zinit lucid light-mode compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh' for sindresorhus/pure
 
 zinit wait lucid light-mode for \
     zdharma-continuum/history-search-multi-word \
@@ -53,7 +72,7 @@ zinit wait lucid light-mode for \
  atload"!_zsh_autosuggest_start" \
     zsh-users/zsh-autosuggestions
 
-zinit lucid wait'0a' for \
+zinit wait lucid light-mode for \
     as"program" \
     pick"$ZPFX/bin/git-*" \
     src"etc/git-extras-completion.zsh" \
@@ -75,6 +94,7 @@ else
     fi
 fi
 unset __conda_setup
+export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
 ### End of conda initialize ### 
 
 ### Run onefetch on cd into git repo ###
@@ -109,7 +129,6 @@ alias la="ls -a"
 alias getgpu="glxinfo | grep 'OpenGL renderer'"
 alias cat="bat"
 alias dgpu-status="cat /sys/bus/pci/devices/0000:01:00.0/power/runtime_status"
-alias inspiration="~/.local/bin/inspiration.sh"
 alias tree="ls --tree";
 alias gh='firefox https://$(git config remote.origin.url | cut -f2 -d@ | tr ':' /)'
 ### End of variables ###
