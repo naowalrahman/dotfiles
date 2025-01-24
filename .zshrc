@@ -151,5 +151,9 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 "
 ### End of fzf-tab configuration ###
 
+
+### Fix zsh-vi-mode on termux ###
+setopt re_match_pcre
+
 # Add ~/.local/bin to PATH
 export PATH="/home/naowal/.local/bin:$PATH"
