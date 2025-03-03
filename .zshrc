@@ -130,6 +130,7 @@ alias cat="bat"
 alias dgpu-status="cat /sys/bus/pci/devices/0000:01:00.0/power/runtime_status"
 alias tree="ls --tree";
 alias gh='firefox https://$(git config remote.origin.url | cut -f2 -d@ | tr ':' /)'
+alias hub='git'
 ### End of variables ###
 
 ### Fzf-tab configuration ###
@@ -169,5 +170,9 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 "
 ### End of fzf-tab configuration ###
 
+
+### Fix zsh-vi-mode on termux ###
+setopt re_match_pcre
+
 # Add ~/.local/bin to PATH
-export PATH="/home/naowal/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"

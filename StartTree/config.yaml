@@ -3,7 +3,7 @@ theme: tokyonight
 tree_1:
   mail:
     personal: "https://mail.google.com/"  
-    columbia: "https://lionmail.columbia.edu"
+    columbia: "http://lionmail.columbia.edu"
   general:
     quran: "https://quran.com"
     amazon: "https://amazon.com"
