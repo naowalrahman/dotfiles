@@ -127,7 +127,7 @@ alias ll="ls -l --git --git-repos"
 alias l="ll -a"
 alias la="ls -a"
 alias getgpu="glxinfo | grep 'OpenGL renderer'"
-alias cat="bat"
+alias cat="bat --theme=ansi"
 alias dgpu-status="cat /sys/bus/pci/devices/0000:01:00.0/power/runtime_status"
 alias tree="ls --tree";
 alias gh='firefox https://$(git config remote.origin.url | cut -f2 -d@ | tr ':' /)'
