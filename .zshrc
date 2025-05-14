@@ -120,7 +120,6 @@ export COLORTERM="truecolor"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export HOSTNAME="arch"
-export LS_COLORS=$(vivid generate snazzy)
 
 alias ls="eza --icons -h";
 alias ll="ls -l --git --git-repos"
