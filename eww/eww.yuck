@@ -1,0 +1,199 @@
+;; Variables
+(defpoll datetime :interval "1m" `date "+%a %b %d %I:%M %p"`)
+(defpoll calendar_day :interval "10h" :initial "26" `date "+%d"`)
+(defpoll calendar_month :interval "10h" :initial "5" `date "+%m"`)
+(defpoll calendar_year :interval "10h" :initial "2025" `date "+%Y"`)
+(defpoll volume :interval "1s" `pamixer --get-volume`)
+(defpoll is_muted :interval "1s" `pamixer --get-mute`)
+(defpoll battery :interval "30s" `acpi -b | awk -F', ' '{print $2}' | tr -d '%'`)
+(defpoll battery_status :interval "30s" `acpi -b | awk -F': ' '{print $2}' | awk -F', ' '{print $1}'`)
+(defpoll memory_usage :interval "30s" `free -m | grep Mem | awk '{printf "%.1f", $3/$2 * 100}'`)
+(defpoll temperature :interval "30s" `cat /sys/class/thermal/thermal_zone0/temp | awk '{print $1/1000}'`)
+(defpoll network_ssid :interval "30s" `iwgetid -r || echo "Disconnected"`)
+(defpoll network_type :interval "30s" `[[ $(iwgetid -r) != "" ]] && echo "wifi" || (ip link | grep "eth0" | grep "UP" > /dev/null && echo "ethernet" || echo "disconnected")`)
+
+;; Hyprland workspaces
+(deflisten workspaces :initial "[]" "bash ~/.config/eww/scripts/get-workspaces.sh")
+(deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/get-active-workspace.sh")
+(deflisten window_title :initial "" "bash ~/.config/eww/scripts/get-window-title.sh")
+
+; Closer widget
+(defwidget closer [window]
+  (button 
+  :style "all: unset;"
+        :onclick "eww close ${window} && eww close ${window}-closer"))
+
+(defwindow calendar-closer
+  :monitor 0
+  :geometry (geometry :width "100%" :height "100%")
+  :stacking "fg"
+  :focusable false
+  (closer :window "calendar"))
+
+;; Widget Definitions
+(defwidget workspaces []
+  (eventbox :onscroll "echo {} | sed -e 's/up/-1/g' -e 's/down/+1/g' | xargs hyprctl dispatch workspace"
+    (box :class "workspaces-widget"
+         :orientation "h"
+         :space-evenly false
+         :halign "start"
+    (for workspace in workspaces
+        (button :class "workspace-btn ${workspace.windows == "active" ? "active-workspace" : "inactive-workspace"} ${workspace.windows == "windows" ? "occupied" : ""}"
+                :onclick "hyprctl dispatch workspace ${workspace.id}"
+                "${workspace.id}"))
+      )))
+
+(defwidget window_title_widget []
+  (box :class "window-title"
+       :orientation "h"
+       :space-evenly false
+       :halign "center"
+       :tooltip window_title
+    window_title))
+
+(defwidget volume_widget []
+  (box :class "volume-widget"
+       :orientation "h"
+       :space-evenly false
+    (button :onclick "pamixer -t"
+      (label :text {is_muted == "true" ? "󰝟 " : 
+                    volume < 30 ? "󰕿 " : 
+                    volume < 70 ? "󰖀 " : "󰕾 "}))
+    (label :text "${volume}%")))
+
+(defwidget network_widget []
+  (box :class "network-widget"
+       :orientation "h"
+       :space-evenly false
+    (label :text {network_type == "wifi" ? "󰖩 " : 
+                  network_type == "ethernet" ? "󰈀" : "󰖪"})
+    (label :text network_ssid)))
+
+(defwidget memory_widget []
+  (box :class "memory-widget"
+       :orientation "h"
+       :space-evenly false
+       :tooltip "Memory: ${memory_usage}%"
+    (label :text " ")
+    (label :text "${memory_usage}%")))
+
+(defwidget temperature_widget []
+  (box :class "temperature-widget"
+       :orientation "h"
+       :space-evenly false
+       :tooltip "Temperature: ${temperature}°C"
+    (label :text "󰔏 ")
+    (label :text "${temperature}°C")))
+
+(defwidget battery_widget []
+  (box :class "battery-widget"
+       :orientation "h"
+       :space-evenly false
+       :tooltip "Battery: ${battery}%"
+    (label :text {battery_status == "Charging" ? "󰂄 " :
+                  battery < 10 ? "󰁺 " :
+                  battery < 20 ? "󰁻 " :
+                  battery < 30 ? "󰁼 " :
+                  battery < 40 ? "󰁽 " :
+                  battery < 50 ? "󰁾 " :
+                  battery < 60 ? "󰁿 " :
+                  battery < 70 ? "󰂀 " :
+                  battery < 80 ? "󰂁 " :
+                  battery < 90 ? "󰂂 " : "󰁹 "})
+    (label :text "${battery}%")))
+
+(defwidget datetime_widget []
+    (box :class "datetime-widget"
+         :orientation "h"
+         :space-evenly false
+    (button :onclick "eww open-many calendar calendar-closer"
+            :class "datetime-eventbox"
+      (box :class "datetime-display"
+           :orientation "h"
+           :space-evenly false
+        (label :text "󰸗 ")
+        (label :text "${datetime}")))))
+
+(defwidget system_tray []
+  (box :class "system-tray"
+       :orientation "h"
+    (systray)))
+
+(defwidget separator []
+  (box :class "separator"
+       :orientation "h"
+    (label :text "|")))
+
+(defwidget left_modules []
+  (box :class "left-modules"
+       :orientation "h"
+       :space-evenly false
+       :halign "start"
+    (workspaces)
+    (separator)
+    (window_title_widget)))
+
+(defwidget center_modules []
+  (box :class "center-modules"
+       :orientation "h"
+       :space-evenly false
+       :halign "center"
+    (datetime_widget)))
+
+(defwidget right_modules []
+  (box :class "right-modules"
+       :orientation "h"
+       :space-evenly false
+       :halign "end"
+    (memory_widget)
+    (separator)
+    (temperature_widget)
+    (separator)
+    (volume_widget)
+    (separator)
+    (network_widget)
+    (separator)
+    (battery_widget)
+    (separator)
+    (system_tray)))
+
+(defwidget bar []
+  (box :class "bar"
+       :orientation "h"
+    (left_modules)
+    (center_modules)
+    (right_modules)))
+
+;; Calendar widget
+(defwidget calendar_widget []
+    (box
+         :orientation "v"
+         :space-evenly false
+      (calendar :class "gtk-calendar"
+                :day {calendar_day}
+                :month {calendar_month}
+                :year {calendar_year})))
+
+;; Window Definitions
+(defwindow bar
+  :monitor 0
+  :exclusive true
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "100%"
+                      :height "20px"
+                      :anchor "top center")
+  :stacking "fg"
+  :windowtype "dock"
+  (bar))
+
+(defwindow calendar
+  :monitor 0
+  :geometry (geometry :x "0px"
+                      :y "20px"
+                      :anchor "top center")
+  :stacking "overlay"
+  :windowtype "notification"
+  :wm-ignore true
+  :focusable false
+  (calendar_widget))

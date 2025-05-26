@@ -20,6 +20,7 @@
 !/fastfetch**
 !/hypr**
 !/yazi**
+!/eww**
 
 /ranger/plugins/__pycache__**
 
@@ -28,3 +29,4 @@
 
 !libinput-gestures.conf
 !.zshrc
+

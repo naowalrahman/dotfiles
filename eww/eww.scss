@@ -1,0 +1,172 @@
+// Variables
+$background: #1e1e2e;
+$background-transparent: rgba(30, 30, 46, 0.5);
+$widget-bg: rgba(49, 50, 68, 0.85);
+$foreground: #cdd6f4;
+$accent: #89b4fa;
+$accent-transparent: rgba(137, 180, 250, 0.8);
+$surface0: #313244;
+$surface1: #45475a;
+$red: #f38ba8;
+$green: #a6e3a1;
+$yellow: #f9e2af;
+$blue: #89b4fa;
+$purple: #cba6f7;
+$teal: #94e2d5;
+$calendar-bg: rgba(30, 30, 46, 0.95);
+$calendar-header: rgba(137, 180, 250, 0.9);
+$calendar-today: rgba(203, 166, 247, 0.8);
+// $calendar-today: #ffffff;
+$calendar-day-hover: rgba(166, 227, 161, 0.5);
+$calendar-day-selected: rgba(249, 226, 175, 0.8);
+
+// General Styles
+*:not(calendar) {
+  all: unset;
+  font-family: "Inter", "Noto Sans", sans-serif;
+  font-size: 14px;
+}
+
+
+// Bar
+.bar {
+  background-color: transparent;
+  color: $foreground;
+  padding: 0px 0px;
+  border-radius: 0;
+  margin: 0;
+
+}
+
+// Workspaces
+.workspaces-widget {
+  margin: 0 5px;
+}
+
+.workspace-btn {
+  padding: 0px 5px;
+  margin: 0px 2px;
+  border-radius: 4px;
+  min-width: 15px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: $surface0;
+  }
+
+  &.occupied {
+    color: $accent;
+    border: 1px $accent solid;
+  }
+
+  &.active-workspace {
+    background-color: $accent;
+    color: $background;
+  }
+}
+
+// Window Title
+.window-title {
+  margin-left: 10px;
+  font-weight: bold;
+  color: $foreground;
+}
+
+// Modules
+.left-modules,
+.center-modules,
+.right-modules {
+  padding: 0 5px;
+}
+
+// Common widget styling
+.volume-widget,
+.network-widget,
+.memory-widget,
+.temperature-widget,
+.battery-widget,
+.datetime-display,
+.system-tray {
+  background-color: $widget-bg;
+  border-radius: 8px;
+  padding: 4px 8px;
+  margin: 0 4px;
+
+}
+
+// Volume Widget
+.volume-widget {
+  color: $blue;
+  margin: 0 5px;
+}
+
+// Network Widget
+.network-widget {
+  color: $purple;
+  margin: 0 5px;
+}
+
+// CPU Widget
+.cpu-widget {
+  color: $green;
+  margin: 0 5px;
+}
+
+// Memory Widget
+.memory-widget {
+  color: $yellow;
+  margin: 0 5px;
+}
+
+// Temperature Widget
+.temperature-widget {
+  color: $red;
+  margin: 0 5px;
+}
+
+// Battery Widget
+.battery-widget {
+  color: $teal;
+  margin: 0 5px;
+}
+
+// Date Widget
+.datetime-widget {
+  color: $accent;
+  margin: 0 5px;
+}
+
+.gtk-calendar {
+  &:selected {
+    font-size: 20px;
+    background-color: $accent;
+    color: $background;
+  }
+}
+
+
+// System Tray
+.system-tray {
+  margin: 0 5px;
+}
+
+// Separator
+.separator {
+  color: $surface1;
+  margin: 0 5px;
+  font-size: 10px;
+}
+
+button {
+  border-radius: 4px;
+}
+
+// Add hover effects to interactive elements
+button:not(.workspace-btn),
+button * {
+  transition: 0.2s ease-in-out;
+
+  &:hover * {
+    background-color: $surface1;
+  }
+}

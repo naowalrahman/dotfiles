@@ -9,10 +9,10 @@
 	# characters not in the chosen font will fail to render.
 	#
 	# Otherwise, fonts are interpreted in Pango format.
-	font = "Lato"
+	font = "Inter Medium"
 
 	# Point size of text.
-	font-size = 12
+	font-size = 14
 
 	# Comma separated list of OpenType font feature settings to apply,
 	# if supported by the chosen font. The format is similar to the CSS
