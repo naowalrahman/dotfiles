@@ -224,7 +224,7 @@ remove_airplane_btn = true
 # text = "#ffffff" # optional default base text color
 [appearance]
 # optional, default iced.rs font
-font_name = "FiraCode Nerd Font"
+font_name = "JetBrainsMono Nerd Font"
 # The style of the main bar, possible values are: Islands | Solid | Gradient
 # optional, default Islands
 style = "Solid"
