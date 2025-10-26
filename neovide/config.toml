@@ -1,0 +1,28 @@
+fork = false
+frame = "full"
+idle = true
+maximized = false
+mouse-cursor-icon = "arrow"
+no-multigrid = false
+srgb = false
+tabs = true
+theme = "auto"
+title-hidden = true
+vsync = true 
+
+[font]
+size = 12
+hinting = "full"
+edging = "antialias"
+
+[[font.normal]]
+family = "JetBrainsMono Nerd Font"
+style = "W300"
+
+[[font.bold]]
+family = "JetBrainsMono Nerd Font"
+style = "W900"
+
+[[font.bold_italic]]
+family = "JetBrainsMono Nerd Font"
+style = "ExtraBold Italic"
