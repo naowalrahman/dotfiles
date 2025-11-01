@@ -82,19 +82,19 @@ zinit wait lucid light-mode for \
 
 
 ### Conda initialize ### 
+export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/naowal/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/naowal/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/naowal/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/naowal/miniconda3/bin:$PATH"
+        export PATH="/opt/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
-export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
 ### End of conda initialize ### 
 
 ### Run onefetch on cd into git repo ###
