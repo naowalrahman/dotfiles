@@ -51,7 +51,7 @@ autoload -Uz _zinit
 ### End of Zinit's installer chunk
 
 ### Zinit plugins ###
-zinit lucid light-mode compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh' for sindresorhus/pure
+# zinit lucid light-mode compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh' for sindresorhus/pure
 
 zinit wait lucid light-mode for \
     zdharma-continuum/history-search-multi-word \
@@ -80,6 +80,8 @@ zinit wait lucid light-mode for \
     tj/git-extras
 ### End of Zinit plugins ###
 
+### oh-my-posh prompt
+eval "$(oh-my-posh --config 'montys' init zsh)"
 
 ### Conda initialize ### 
 export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
