@@ -5,7 +5,7 @@ setopt autocd extendedglob
 unsetopt beep nomatch notify
 
 ### Zsh vim mode ###
-bindkey -v
+bindkey -e
 KEYTIMEOUT=5
 
 # Change cursor shape for different vi modes.
@@ -81,7 +81,7 @@ zinit wait lucid light-mode for \
 ### End of Zinit plugins ###
 
 ### oh-my-posh prompt
-eval "$(oh-my-posh --config 'montys' init zsh)"
+eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/montys-custom.json)"
 
 ### Conda initialize ### 
 export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
@@ -100,21 +100,21 @@ unset __conda_setup
 ### End of conda initialize ### 
 
 ### Run onefetch on cd into git repo ###
-cd() {
-    if [ "$#" -eq 0 ]; then
-        builtin cd
-    else
-        builtin cd "$*"
-        if [ -d .git ]; then
-            onefetch
-        fi
-    fi
-}
+# cd() {
+#     if [ "$#" -eq 0 ]; then
+#         builtin cd
+#     else
+#         builtin cd "$*"
+#         if [ -d .git ]; then
+#             onefetch
+#         fi
+#     fi
+# }
 ### End of run onefetch ###
 
 ### Zsh z configuration ###
 export ZSHZ_CASE=smart
-export ZSHZ_CD=cd
+# export ZSHZ_CD=cd
 ### End of zsh z configuration ###
 
 ### Variables ###
@@ -131,7 +131,7 @@ alias getgpu="glxinfo | grep 'OpenGL renderer'"
 alias cat="bat --theme=ansi"
 alias dgpu-status="cat /sys/bus/pci/devices/0000:01:00.0/power/runtime_status"
 alias tree="ls --tree";
-alias gh='firefox https://$(git config remote.origin.url | cut -f2 -d@ | tr ':' /)'
+alias ghp='xdg-open https://$(git config remote.origin.url | cut -f2 -d@ | tr ':' /)'
 alias hub='git'
 ### End of variables ###
 
@@ -147,34 +147,95 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 # switch group using `,` and `.`
 zstyle ':fzf-tab:*' switch-group ',' '.'
 
+# vague
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
-  --highlight-line \
-  --info=inline-right \
-  --ansi \
-  --layout=reverse \
-  --border=none
-  --color=bg+:#283457 \
-  --color=bg:#16161e \
-  --color=border:#27a1b9 \
-  --color=fg:#c0caf5 \
-  --color=gutter:#16161e \
-  --color=header:#ff9e64 \
-  --color=hl+:#2ac3de \
-  --color=hl:#2ac3de \
-  --color=info:#545c7e \
-  --color=marker:#ff007c \
-  --color=pointer:#ff007c \
-  --color=prompt:#2ac3de \
-  --color=query:#c0caf5:regular \
-  --color=scrollbar:#27a1b9 \
-  --color=separator:#ff9e64 \
-  --color=spinner:#ff007c \
+    --highlight-line \
+    --info=inline-right \
+    --ansi \
+    --layout=reverse \
+    --color=fg:#cdcdcd
+    --color=bg:#141415
+    --color=hl:#f3be7c
+    --color=fg+:#aeaed1
+    --color=bg+:#252530
+    --color=hl+:#f3be7c
+    --color=border:#606079
+    --color=header:#6e94b2
+    --color=gutter:#141415
+    --color=spinner:#7fa563
+    --color=info:#f3be7c
+    --color=pointer:#aeaed1
+    --color=marker:#d8647e
+    --color=prompt:#bb9dbd
 "
+
+# carbonfox
+# export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
+#   --highlight-line \
+#   --info=inline-right \
+#   --ansi \
+#   --layout=reverse \
+#   --border=none \
+#   --color=bg+:#2a2a2a \
+#   --color=bg:#161616 \
+#   --color=border:#33b1ff \
+#   --color=fg:#f2f4f8 \
+#   --color=gutter:#161616 \
+#   --color=header:#ff7eb6 \
+#   --color=hl+:#3ddbd9 \
+#   --color=hl:#33b1ff \
+#   --color=info:#b6b8bb \
+#   --color=marker:#ee5396 \
+#   --color=pointer:#33b1ff \
+#   --color=prompt:#3ddbd9 \
+#   --color=query:#f2f4f8:regular \
+#   --color=scrollbar:#33b1ff \
+#   --color=separator:#ff7eb6 \
+#   --color=spinner:#ee5396 \
+# "
+
+# tokyonight
+# export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
+#   --highlight-line \
+#   --info=inline-right \
+#   --ansi \
+#   --layout=reverse \
+#   --border=none
+#   --color=bg+:#283457 \
+#   --color=bg:#16161e \
+#   --color=border:#27a1b9 \
+#   --color=fg:#c0caf5 \
+#   --color=gutter:#16161e \
+#   --color=header:#ff9e64 \
+#   --color=hl+:#2ac3de \
+#   --color=hl:#2ac3de \
+#   --color=info:#545c7e \
+#   --color=marker:#ff007c \
+#   --color=pointer:#ff007c \
+#   --color=prompt:#2ac3de \
+#   --color=query:#c0caf5:regular \
+#   --color=scrollbar:#27a1b9 \
+#   --color=separator:#ff9e64 \
+#   --color=spinner:#ff007c \
+# "
+
 ### End of fzf-tab configuration ###
+
+### generate commit message with opencode ###
+
+gencm() {
+    local msg
+    msg="$(opencode run \
+        --command generate-commit-msg \
+        --file <(git --no-pager diff --staged))"
+
+    echo "$msg" | tee >(wl-copy)   
+}
+
+### end of generate commit message with opencode ###    
 
 
 ### Fix zsh-vi-mode on termux ###
 setopt re_match_pcre
 
-# Add ~/.local/bin to PATH
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.bun/bin:$HOME/.local/bin:$PATH"
