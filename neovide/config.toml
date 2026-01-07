@@ -8,21 +8,33 @@ srgb = false
 tabs = true
 theme = "auto"
 title-hidden = true
-vsync = true 
+vsync = true
 
 [font]
 size = 12
-hinting = "full"
-edging = "antialias"
+hinting = "slight"
+edging = "subpixelantialias"
 
 [[font.normal]]
-family = "JetBrainsMono Nerd Font"
-style = "W300"
+# family = "JetBrainsMono Nerd Font"
+family = "CaskaydiaCove Nerd Font"
+style = "Regular"
 
 [[font.bold]]
-family = "JetBrainsMono Nerd Font"
-style = "W900"
+# family = "JetBrainsMono Nerd Font"
+family = "CaskaydiaCove Nerd Font"
+style = "Bold"
+
+[[font.italic]]
+# family = "JetBrainsMono Nerd Font"
+family = "CaskaydiaCove Nerd Font"
+style = "Italic"
 
 [[font.bold_italic]]
-family = "JetBrainsMono Nerd Font"
-style = "ExtraBold Italic"
+# family = "JetBrainsMono Nerd Font"
+family = "CaskaydiaCove Nerd Font"
+style = "Bold Italic"
+
+[font.features]
+"JetBrainsMono Nerd Font" = ["+calt", "+zero", "+ss02"]
+"CaskaydiaCove Nerd Font" = ["+calt", "+ss19", "+ss01"]
