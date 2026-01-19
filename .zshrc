@@ -229,8 +229,7 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 gencm() {
     local msg
     msg="$(opencode run \
-        --command generate-commit-msg \
-        --file <(git --no-pager diff --staged))"
+        --command generate-commit-msg)"
 
     echo "$msg" | tee >(wl-copy)   
 }
