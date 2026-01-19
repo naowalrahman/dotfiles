@@ -1,6 +1,6 @@
 ---
 description: generate a git commit message based on staged changes
-model: google/gemini-3-flash-low
+model: google/gemini-3-flash
 ---
 
 Recent commits:

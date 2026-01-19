@@ -31,5 +31,7 @@
 /tmux/plugins**
 
 !libinput-gestures.conf
+
+!/zsh**
 !.zshrc
 

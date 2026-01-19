@@ -4,7 +4,7 @@ SAVEHIST=1000
 setopt autocd extendedglob
 unsetopt beep nomatch notify
 
-### Zsh vim mode ###
+### Zsh emacs mode ###
 bindkey -e
 KEYTIMEOUT=5
 
@@ -57,9 +57,11 @@ zinit wait lucid light-mode for \
     zdharma-continuum/history-search-multi-word \
     Aloxaf/fzf-tab
 
+zinit ice wait lucid id-as"archlinux-plugin"
+zinit snippet ~/.config/zsh/archlinux.zsh
+
 zinit wait lucid light-mode for \
     OMZ::plugins/git/git.plugin.zsh \
-    OMZ::plugins/archlinux/archlinux.plugin.zsh \
     OMZ::plugins/dirhistory/dirhistory.plugin.zsh \
     OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh \
     agkozak/zsh-z
@@ -122,6 +124,7 @@ export COLORTERM="truecolor"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export HOSTNAME="arch"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 alias ls="eza --icons -h";
 alias ll="ls -l --git --git-repos"
