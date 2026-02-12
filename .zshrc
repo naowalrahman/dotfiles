@@ -82,8 +82,12 @@ zinit wait lucid light-mode for \
     tj/git-extras
 ### End of Zinit plugins ###
 
-### oh-my-posh prompt
-eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/montys-custom.json)"
+### prompt
+if [[ "$TERM" == "linux" ]]; then
+    PROMPT="[%~]$ "
+else
+    eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/montys-custom.json)"
+fi
 
 ### Conda initialize ### 
 export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
@@ -224,7 +228,7 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 
 ### End of fzf-tab configuration ###
 
-### generate commit message with opencode ###
+### Opencode configuration ###
 
 gencm() {
     local msg
@@ -234,7 +238,9 @@ gencm() {
     echo "$msg" | tee >(wl-copy)   
 }
 
-### end of generate commit message with opencode ###    
+alias oc="export $(cat ~/.config/opencode/.env | xargs) && opencode"
+
+### End of opencode configuration ###    
 
 
 ### Fix zsh-vi-mode on termux ###

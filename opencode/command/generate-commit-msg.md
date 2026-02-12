@@ -1,7 +1,7 @@
 ---
 description: generate a git commit message based on staged changes
 model: google/gemini-3-flash-preview
-agent: ask
+agent: build
 ---
 
 Recent commits:
