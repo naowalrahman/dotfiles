@@ -13,6 +13,11 @@ _fix_cursor() {
     echo -ne '\e[5 q'
 }
 precmd_functions+=(_fix_cursor)
+
+# Edit current command line in $EDITOR with Ctrl+G
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^G' edit-command-line
 ### End of zsh vim mode
 
 ### The following lines were added by compinstall ###
