@@ -4,15 +4,36 @@ SAVEHIST=1000
 setopt autocd extendedglob
 unsetopt beep nomatch notify
 
-### Zsh emacs mode ###
-bindkey -e
+### Zsh vim mode ###
+bindkey -v
+bindkey "^H" backward-delete-char
+bindkey "^?" backward-delete-char
+bindkey "^W" vi-backward-kill-word
+
+# Ghostty-compatible Vi mode cursor shapes
+function zle-keymap-select {
+  if [[ $KEYMAP == vicmd ]]; then
+    echo -ne "\e[2 q" # Steady Block for Normal Mode
+  else
+    echo -ne "\e[6 q" # Steady Beam/Line for Insert Mode
+  fi
+}
+zle -N zle-keymap-select
+
+# Ensure beam cursor on initial prompt load
+function zle-line-init {
+  echo -ne "\e[6 q"
+}
+zle -N zle-line-init
+
+# Fix: Reset cursor to beam back when executing a command
+function zle-line-finish {
+  echo -ne "\e[6 q"
+}
+zle -N zle-line-finish
+
 KEYTIMEOUT=5
 
-# Fix cursor when exiting neovim
-_fix_cursor() {
-    echo -ne '\e[5 q'
-}
-precmd_functions+=(_fix_cursor)
 ### End of zsh vim mode
 
 ### The following lines were added by compinstall ###
@@ -42,8 +63,10 @@ zinit wait lucid light-mode for \
     zdharma-continuum/history-search-multi-word \
     Aloxaf/fzf-tab
 
-zinit ice wait lucid id-as"archlinux-plugin"
-zinit snippet ~/.config/zsh/archlinux.zsh
+if [[ "$OSTYPE" == "linux"* ]]; then
+    zinit ice wait lucid id-as"archlinux-plugin"
+    zinit snippet ~/.config/zsh/archlinux.zsh
+fi
 
 zinit wait lucid light-mode for \
     OMZ::plugins/git/git.plugin.zsh \
@@ -125,6 +148,11 @@ alias dgpu-status="cat /sys/bus/pci/devices/0000:01:00.0/power/runtime_status"
 alias tree="ls --tree";
 alias ghp='xdg-open https://$(git config remote.origin.url | cut -f2 -d@ | tr ':' /)'
 alias hub='git'
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    alias g++="g++-16"
+    alias gcc="gcc-16"
+fi
 ### End of variables ###
 
 ### Fzf-tab configuration ###
@@ -212,21 +240,6 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 # "
 
 ### End of fzf-tab configuration ###
-
-### Opencode configuration ###
-
-gencm() {
-    local msg
-    msg="$(opencode run \
-        --command generate-commit-msg)"
-
-    echo "$msg" | tee >(wl-copy)   
-}
-
-alias oc="export $(cat ~/.config/opencode/.env | xargs) && opencode"
-
-### End of opencode configuration ###    
-
 
 ### Fix zsh-vi-mode on termux ###
 setopt re_match_pcre
